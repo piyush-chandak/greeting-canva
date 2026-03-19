@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GreetingCanva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta name="description"
+        content="Create personalized greeting cards online with GreetingCanva. Upload images, add custom messages, save templates, and share cards easily.">
+    <meta name="keywords"
+        content="Greeting card maker, online greeting cards, custom messages, templates, Birthday cards, Anniversary cards">
+    <meta name="author" content="Piyush">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="GreetingCanva - Create Personalized Greeting Cards">
+    <meta property="og:description"
+        content="Upload images, add messages, save templates, and share greeting cards online for birthdays, anniversaries, and more.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://piyush-chandak.github.io/greeting-canva">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GreetingCanva - Create Personalized Greeting Cards">
+    <meta name="twitter:description"
+        content="Upload images, add messages, save templates, and share greeting cards online.">
+    <meta name="twitter:image" content="logo.png">
+    <meta name="twitter:site" content="@piyush-chandak">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg" />
+    <link rel="shortcut icon" href="./icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GreetCanva" />
+
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#f97316">
+</head>
+
+<body class="bg-gradient-to-br from-orange-100 to-pink-100 min-h-screen p-4">
+
+    <div class="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-6">
+
+        <h1 class="text-3xl font-bold text-center text-orange-600 mb-6">GreetingCanva</h1>
+
+        <!-- Image Upload -->
+        <label class="block font-semibold mb-1">Upload Image <span class="text-red-500">*</span></label>
+        <input type="file" id="imageInput" accept="image/*" class="w-full p-2 border rounded-lg mb-3" required>
+
+        <!-- Message -->
+        <label class="block font-semibold mb-1">Message <span class="text-red-500">*</span></label>
+        <textarea id="messageInput" rows="3" class="w-full p-2 border rounded-lg mb-3"
+            placeholder="🎉 Happy Birthday {relation}! 🎂" required></textarea>
+
+        <!-- Variables -->
+        <label class="block font-semibold mb-1 flex items-center justify-between">
+            Variables
+            <button onclick="addVariableField()" class="bg-gray-200 px-2 py-1 text-sm rounded">+ Add</button>
+        </label>
+        <div id="variablesContainer" class="space-y-2 mb-4"></div>
+
+        <!-- Buttons -->
+        <div class="mb-4">
+            <button onclick="generateCard()" class="w-full bg-orange-500 text-white py-2 rounded">Generate</button>
+        </div>
+
+        <!-- Template -->
+        <label class="block font-semibold mb-1">Template Name</label>
+        <div class="flex gap-2 mb-4 items-center">
+            <input type="text" id="templateName" placeholder="Enter template name" class="flex-1 p-2 border rounded">
+            <button onclick="saveTemplate()" class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
+        </div>
+
+        <!-- Load Templates -->
+        <!-- Load & Delete Templates -->
+        <label class="block font-semibold mb-1">Load Template</label>
+        <div class="flex gap-2 mb-4">
+            <select id="templateSelect" onchange="loadTemplate()" class="flex-1 p-2 border rounded">
+                <option value="">Select Template</option>
+            </select>
+            <button onclick="deleteTemplate()" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+        </div>
+
+    </div>
+
+    <!-- Output -->
+    <div id="output" class="max-w-4xl mx-auto mt-6 grid gap-6 md:grid-cols-2"></div>
+
+    <!-- Footer -->
+    <button id="installBtn"
+        class="hidden bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-orange-700 transition">
+        Install as App
+    </button>
+
+    <footer class="text-center mt-6 text-gray-600 text-sm">
+        Crafter with <span class="text-red-500">❤️</span> by <a href="https://piyush-chandak.github.io"
+            class="text-blue-500 underline" target="_blank">Piyush</a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV1KFFW8WB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FV1KFFW8WB');
+    </script>
+</body>
+
+</html>
