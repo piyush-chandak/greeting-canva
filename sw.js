@@ -1,4 +1,4 @@
-const CACHE_NAME = 'greetingcanva-cache-v1.0.1';
+const CACHE_NAME = 'GreetShare-cache-v1.0.2';
 const urlsToCache = [
     './',
     './index.html',

@@ -3,28 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>GreetingCanva</title>
+    <title>GreetShare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <meta name="description"
-        content="Create personalized greeting cards online with GreetingCanva. Upload images, add custom messages, save templates, and share cards easily.">
+        content="Create personalized greeting cards online with GreetShare. Upload images, add custom messages, save templates, and share cards easily.">
     <meta name="keywords"
         content="Greeting card maker, online greeting cards, custom messages, templates, Birthday cards, Anniversary cards">
     <meta name="author" content="Piyush">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="GreetingCanva - Create Personalized Greeting Cards">
+    <meta property="og:title" content="GreetShare - Create Personalized Greeting Cards">
     <meta property="og:description"
         content="Upload images, add messages, save templates, and share greeting cards online for birthdays, anniversaries, and more.">
     <meta property="og:image" content="logo.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://piyush-chandak.github.io/greeting-canva">
+    <meta property="og:url" content="https://piyush-chandak.github.io/greet-share">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GreetingCanva - Create Personalized Greeting Cards">
+    <meta name="twitter:title" content="GreetShare - Create Personalized Greeting Cards">
     <meta name="twitter:description"
         content="Upload images, add messages, save templates, and share greeting cards online.">
     <meta name="twitter:image" content="logo.png">
@@ -52,7 +52,7 @@
 
     <div class="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-6">
 
-        <h1 class="text-3xl font-bold text-center text-orange-600 mb-6">GreetingCanva</h1>
+        <h1 class="text-3xl font-bold text-center text-orange-600 mb-6">GreetShare</h1>
 
         <!-- Image Upload -->
         <label class="block font-semibold mb-1">Upload Image <span class="text-red-500">*</span></label>
@@ -98,10 +98,17 @@
     <div id="output" class="max-w-4xl mx-auto mt-6 grid gap-6 md:grid-cols-2"></div>
 
     <!-- Footer -->
-    <button id="installBtn"
-        class="hidden bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-orange-700 transition">
-        Install as App
-    </button>
+    <div class="flex justify-center mt-4 gap-2">
+        <button id="installBtn"
+            class="hidden bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-orange-700 transition">
+            Install as App
+        </button>
+
+        <button id="shareBtn"
+            class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-green-700 transition">
+            Share
+        </button>
+    </div>
 
     <footer class="text-center mt-6 text-gray-600 text-sm">
         Crafter with <span class="text-red-500">❤️</span> by <a href="https://piyush-chandak.github.io"

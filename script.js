@@ -137,7 +137,7 @@ function prepareCard(image, message) {
         ctx.font = "bold 20px sans-serif";
         ctx.textAlign = "right";
         ctx.fillStyle = "rgba(255,255,255,0.8)";
-        ctx.fillText("GreetingCanva", canvas.width - 10, canvas.height - 10);
+        ctx.fillText("GreetShare", canvas.width - 10, canvas.height - 10);
 
         const dataUrl = canvas.toDataURL();
 
@@ -245,6 +245,7 @@ loadSavedVariables();
 // --- PWA INSTALL LOGIC ---
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
+const shareBtn = document.getElementById('shareBtn');
 
 console.log("PWA: Checking secure context...", window.isSecureContext ? "YES ✅" : "NO ❌ (PWA requires HTTPS or localhost)");
 console.log("PWA: Checking service worker compatibility...", ('serviceWorker' in navigator) ? "YES ✅" : "NO ❌");
@@ -277,6 +278,27 @@ if (installBtn) {
         deferredPrompt = null;
         // Hide the install button
         installBtn.classList.add('hidden');
+    });
+}
+
+if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+        const shareData = {
+            title: "GreetShare",
+            text: "Create personalized greeting cards easily 🎉",
+            url: window.location.href
+        };
+
+        if (navigator.share) {
+            navigator.share(shareData)
+                .then(() => console.log("Shared successfully"))
+                .catch((error) => console.log("Error sharing:", error));
+        } else {
+            // Fallback: copy link
+            navigator.clipboard.writeText(shareData.url)
+                .then(() => alert("Link copied to clipboard!"))
+                .catch(() => alert("Failed to copy link"));
+        }
     });
 }
 

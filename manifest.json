@@ -1,6 +1,6 @@
 {
-    "name": "GreetingCanva",
-    "short_name": "GreetingCanva",
+    "name": "GreetShare",
+    "short_name": "GreetShare",
     "description": "Create personalized greeting cards online.",
     "start_url": "./index.html",
     "display": "standalone",
